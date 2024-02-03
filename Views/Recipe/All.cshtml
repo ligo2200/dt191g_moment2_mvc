@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "All recipes";
+}
+
+@model List<RecipeModel>
+
+<h2>Alla recept</h2>
+
+<ul>
+    @foreach (var recipe in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", new { recipeId = recipe.RecipeId })">@recipe.Title</a>
+        </li>
+    }
+</ul>
