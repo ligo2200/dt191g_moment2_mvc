@@ -13,4 +13,4 @@
 <p><a href="@Url.Action("All", "Recipe")">Tillbaka till alla recept</a></p>
 
 
-<partial name="_LatestRecipesPartial" model="@Model" />
+<partial name="_LatestRecipesPartial" model="new List<moment2_mvc.Models.RecipeModel> { @Model }" />

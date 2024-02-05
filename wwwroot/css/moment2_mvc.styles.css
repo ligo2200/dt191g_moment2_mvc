@@ -1,0 +1,105 @@
+﻿/* Reset CSS for cross-browser consistency */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f5e1; /* Mjuk grön toning för bakgrund */
+    color: #4d4d4d; /* Mörkgrå textfärg */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #8db580; /* Mjuk grön toning för header */
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; /* Länkar till höger */
+    align-items: center;
+}
+
+    nav a {
+        text-decoration: none;
+        color: #334d33; /* Mörkgrön textfärg för länkar */
+        margin: 0 15px;
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+        nav a:hover {
+            background-color: #334d33; /* Mörkgrön bakgrund vid hover */
+            color: #fff; /* Vit textfärg vid hover */
+        }
+
+h2, h3 {
+    color: #334d33; /* Mörkgrön textfärg för rubriker */
+}
+
+ul {
+    list-style: none;
+}
+
+/* Formulärstilar */
+form {
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+    form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    form button {
+        background-color: #8db580; /* Mjuk grön toning för knapp */
+        color: #fff; /* Vit textfärg för knapp */
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+    }
+
+/* Lista för recept */
+ul.recipe-list {
+    padding: 10px;
+    background-color: #fff; /* Vit bakgrund för receptlistan */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    ul.recipe-list li {
+        margin-bottom: 20px;
+    }
+
+/* Detaljer för enskilt recept */
+.recipe-details {
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+/* Länkar */
+a {
+    color: #4d4d4d; /* Mörkgrå textfärg för länkar */
+}
+
+/* Footer */
+footer {
+    padding: 10px 0;
+    background-color: #8db580; /* Mjuk grön toning för footer */
+    color: #fff; /* Vit textfärg för footer */
+    text-align: center;
+}

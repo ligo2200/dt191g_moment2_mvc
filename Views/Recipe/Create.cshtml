@@ -16,6 +16,20 @@
     <input asp-for="Title" />
     <span asp-validation-for="Title" class="text-danger"></span>
     <br />
+
+    <label asp-for="Category">Kategori:</label>
+    <select asp-for="Category" asp-items="@(new SelectList(ViewBag.Categories))"></select>
+    <br />
+
+    <label>Svårighetsgrad:</label>
+    <input type="radio" asp-for="Difficulty" value="Lätt" /> Lätt
+    <input type="radio" asp-for="Difficulty" value="Medel" /> Medel
+    <input type="radio" asp-for="Difficulty" value="Svårt" /> Svårt
+    <br />
+
+    <label>Vegetarisk:</label>
+    <input type="checkbox" asp-for="IsVegetarian" />
+
     <label asp-for="Ingredients"></label>
     <textarea asp-for="Ingredients"></textarea>
     <span asp-validation-for="Ingredients" class="text-danger"></span>
