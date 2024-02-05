@@ -1,4 +1,4 @@
-﻿/* Reset CSS for cross-browser consistency */
+﻿
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
@@ -6,8 +6,8 @@ body, h1, h2, h3, p, ul, li {
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f5e1; /* Mjuk grön toning för bakgrund */
-    color: #4d4d4d; /* Mörkgrå textfärg */
+    background-color: #f0f5e1; 
+    color: #4d4d4d; 
 }
 
 .container {
@@ -17,89 +17,184 @@ body {
 }
 
 header {
-    background-color: #8db580; /* Mjuk grön toning för header */
+    background-color: #8db580; 
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    font-size: 1.7em;
+    margin-left: 1%;
+    width: 100%;
 }
 
 nav {
     display: flex;
-    justify-content: flex-end; /* Länkar till höger */
+    justify-content: flex-end;
     align-items: center;
+    width: 100%;
 }
 
-    nav a {
-        text-decoration: none;
-        color: #334d33; /* Mörkgrön textfärg för länkar */
-        margin: 0 15px;
-        transition: color 0.3s, background-color 0.3s;
+nav a {
+    text-decoration: none;
+    color: #334d33; 
+    margin: 0 15px;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 4px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background-color: #334d33; 
+    color: #fff; 
+}
+
+.li-item {
+    display: inline-block;
+    padding: 4px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
     }
 
-        nav a:hover {
-            background-color: #334d33; /* Mörkgrön bakgrund vid hover */
-            color: #fff; /* Vit textfärg vid hover */
-        }
+    nav a {
+        margin: 5px 0;
+    }
+}
 
 h2, h3 {
-    color: #334d33; /* Mörkgrön textfärg för rubriker */
+    color: #334d33; 
+}
+.rub3 {
+    margin-top: 10px;
 }
 
 ul {
     list-style: none;
 }
+main {
+    display: flex;
+    justify-content: center;
+}
+.left {
+    text-align: center;
+    width: 100%;
+    margin-top: 1%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left .rec {
+    width: 60%;
+}
+.rec p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.title-rec {
+    margin-top: 5%;
+}
+.li-rec {
+    border-bottom: 1px solid #334d33;
+}
+aside {
+    width: 15%;
+    margin-top: 1%;
+    background-color: #8db580;
+    padding: 1%;
+}
+aside a{
+    padding: 2%;
+}
+    aside a:hover {
+        color: white;
+        background-color: #334d33;
+    }
+.aside-rec {
+    padding: 1%;
+}
+.all-rec {
+    padding: 5%;
+}
+.all-rec a {
+    padding: 6px;
+}
+    .all-rec a:hover {
+        color: white;
+        background-color: #334d33;
+    }
 
-/* Formulärstilar */
+/*form style*/
 form {
     max-width: 600px;
     margin: 20px 0;
+    width: 100%;
 }
 
-    form label {
-        display: block;
-        margin-bottom: 5px;
-    }
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    padding: 1%;
+}
 
-    form input,
-    form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        box-sizing: border-box;
-    }
-
-    form button {
-        background-color: #8db580; /* Mjuk grön toning för knapp */
-        color: #fff; /* Vit textfärg för knapp */
-        padding: 10px 15px;
-        border: none;
-        cursor: pointer;
-    }
-
-/* Lista för recept */
-ul.recipe-list {
+form input,
+form textarea {
+    width: 100%;
     padding: 10px;
-    background-color: #fff; /* Vit bakgrund för receptlistan */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+select {
+    width: 200px;
+    font-size: 1.05em;
+    margin-bottom: 4%;
+}
+input[type="radio"] {
+    margin-bottom: 0px;
+}
+input[type="checkbox"] {
+    margin-bottom: 20px;
+    width: 18px;
+    height: 18px;
+}
+.veg {
+    margin-top: 3%;
 }
 
-    ul.recipe-list li {
-        margin-bottom: 20px;
+form button {
+    background-color: #8db580; 
+    color: #fff; 
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+    form button:hover {
+        background-color: #334d33;
     }
 
-/* Detaljer för enskilt recept */
-.recipe-details {
-    max-width: 600px;
-    margin: 20px 0;
+.single-rec {
+    margin-top: 0.5%;
+    width: 60%;
+}
+.single-rec p {
+    margin-top: 1%;
+    margin-bottom: 4%;
 }
 
-/* Länkar */
 a {
-    color: #4d4d4d; /* Mörkgrå textfärg för länkar */
+    color: #4d4d4d; 
 }
 
 /* Footer */
 footer {
-    padding: 10px 0;
-    background-color: #8db580; /* Mjuk grön toning för footer */
-    color: #fff; /* Vit textfärg för footer */
-    text-align: center;
+    padding: 1.5%;
+    background-color: #8db580; 
+    color: #fff;
+    
 }

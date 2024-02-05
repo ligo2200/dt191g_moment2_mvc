@@ -4,16 +4,19 @@
     ViewData["Title"] = "Alla recept";
 }
 
-
+<div class="left">
 <h2>Alla recept</h2>
 
 <ul>
     @foreach (var recipe in Model)
     {
-        <li>
+        <li class="all-rec">
             <a href="@Url.Action("Details", new { recipeId = recipe.RecipeId })">@recipe.Title</a>
         </li>
     }
 </ul>
+</div>
 
-<partial name="_LatestRecipesPartial" model="@Model" />
+<aside>
+    <partial name="_LatestRecipesPartial" model="@Model" />
+</aside>

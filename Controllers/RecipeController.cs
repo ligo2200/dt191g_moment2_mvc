@@ -29,7 +29,7 @@ namespace moment2_mvc.Controllers
             
             ViewBag.Message = "Använd formuläret för att skriva in ditt recept.";
 
-            ViewBag.Categories = new String[] { "Förrätt", "Huvudrätt", "Efterrätt", "Bröd", "Kakor" };
+            ViewBag.Categories = new String[] { "Förrätt", "Huvudrätt", "Efterrätt", "Bröd", "Kakor", "Övrigt" };
 
             return View();
         }
@@ -81,6 +81,7 @@ namespace moment2_mvc.Controllers
                 return View("RecipeNotFound");
             }
 
+            ViewBag.AllRecipes = recipes;
             return View(recipe);
         }
 

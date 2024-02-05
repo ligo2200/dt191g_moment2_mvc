@@ -1,8 +1,20 @@
 [
   {
     "RecipeId": 1,
-    "Title": "test",
-    "Ingredients": "test",
-    "Instructions": "test"
+    "Title": "Guacamole",
+    "Category": "\u00D6vrigt",
+    "Difficulty": "L\u00E4tt",
+    "IsVegetarian": "true",
+    "Ingredients": "Avokado, limejuice, r\u00F6d chili, vitl\u00F6k, koriander, tomater och l\u00F6k, salt och peppar ",
+    "Instructions": "Mosa avokado med en gaffel, tills\u00E4tt finhackad chili och pressad vitl\u00F6k. Hacka koriander och h\u00E4v i, tillsammans med limejuicen. Smaka av med salt och peppar. Man kan ocks\u00E5 ha i finhackade tomater och finhackad l\u00F6k i om man vill. "
+  },
+  {
+    "RecipeId": 2,
+    "Title": "Vaniljpaj",
+    "Category": "Efterr\u00E4tt",
+    "Difficulty": "L\u00E4tt",
+    "IsVegetarian": "true",
+    "Ingredients": "Till deg: \u00C4gg, mj\u00F6l, socker, sm\u00F6r. Till fyllning: marsanpulver, mj\u00F6lk",
+    "Instructions": "Blanda ihop alla ingredienserna till degen och platta ut den i en form. Blanda marsanpulver och mj\u00F6lk, l\u00E5t st\u00E5 i kyl en stund tills tjocknat. H\u00E4v i fyllningen. In i ugn p\u00E5 cirka 200 grader i 20 minuter."
   }
 ]

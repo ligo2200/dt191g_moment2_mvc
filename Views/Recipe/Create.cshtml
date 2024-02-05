@@ -4,45 +4,46 @@
 }
 
 
+<div class="left">
+    <h2>Lägg till nytt recept</h2>
 
-<h2>Lägg till nytt recept</h2>
+    <h3>@ViewBag.Message</h3>
 
-<h3>@ViewBag.Message</h3>
+    <form method="post">
 
-<form method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+        <br />
 
-    <div asp-validation-summary="ModelOnly"></div>
-    <label asp-for="Title"></label>
-    <input asp-for="Title" />
-    <span asp-validation-for="Title" class="text-danger"></span>
-    <br />
+        <label asp-for="Category">Kategori:</label>
+        <select asp-for="Category" asp-items="@(new SelectList(ViewBag.Categories))"></select>
+        <br />
 
-    <label asp-for="Category">Kategori:</label>
-    <select asp-for="Category" asp-items="@(new SelectList(ViewBag.Categories))"></select>
-    <br />
+        <label>Svårighetsgrad:</label>
+        <input type="radio" asp-for="Difficulty" value="Lätt" /> Lätt
+        <input type="radio" asp-for="Difficulty" value="Medel" /> Medel
+        <input type="radio" asp-for="Difficulty" value="Svårt" /> Svårt
+        <br />
 
-    <label>Svårighetsgrad:</label>
-    <input type="radio" asp-for="Difficulty" value="Lätt" /> Lätt
-    <input type="radio" asp-for="Difficulty" value="Medel" /> Medel
-    <input type="radio" asp-for="Difficulty" value="Svårt" /> Svårt
-    <br />
+        <label class="veg">Vegetarisk:</label>
+        <input type="checkbox" asp-for="IsVegetarian" />
 
-    <label>Vegetarisk:</label>
-    <input type="checkbox" asp-for="IsVegetarian" />
-
-    <label asp-for="Ingredients"></label>
-    <textarea asp-for="Ingredients"></textarea>
-    <span asp-validation-for="Ingredients" class="text-danger"></span>
-    <br />
+        <label asp-for="Ingredients"></label>
+        <textarea asp-for="Ingredients"></textarea>
+        <span asp-validation-for="Ingredients" class="text-danger"></span>
+        <br />
 
    
-    <label asp-for="Instructions"></label>
-    <textarea asp-for="Instructions"></textarea>
-    <span asp-validation-for="Instructions" class="text-danger"></span>
-    <br />
+        <label asp-for="Instructions"></label>
+        <textarea asp-for="Instructions"></textarea>
+        <span asp-validation-for="Instructions" class="text-danger"></span>
+        <br />
 
-    <button type="submit">Lägg till recept</button>
+        <button type="submit">Lägg till recept</button>
 
-</form>
+    </form>
+</div>
 
 

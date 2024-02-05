@@ -3,14 +3,26 @@
 @{
     ViewData["Title"] = "Visar enskilt recept";
 }
-<h2>@Model.Title</h2>
 
-<p><strong>Ingredienser:</strong> @Model.Ingredients</p>
+<div class="left">
+    <h2>@Model.Title</h2>
 
-<p><strong>Instruktioner:</strong> @Model.Instructions</p>
+    <div class="single-rec">
+        <p><strong>Kategori:</strong> @Model.Category</p>
+
+        <p><strong>Svårighetsgrad:</strong> @Model.Difficulty</p>
+
+        <p><strong>Vegetarisk:</strong> @Model.IsVegetarian</p>
+
+        <p><strong>Ingredienser:</strong> @Model.Ingredients</p>
+
+        <p><strong>Instruktioner:</strong> @Model.Instructions</p>
+    </div>
 
 
-<p><a href="@Url.Action("All", "Recipe")">Tillbaka till alla recept</a></p>
+    <p><a href="@Url.Action("All", "Recipe")">Tillbaka till alla recept</a></p>
+</div>
 
-
-<partial name="_LatestRecipesPartial" model="new List<moment2_mvc.Models.RecipeModel> { @Model }" />
+<aside>
+    <partial name="_LatestRecipesPartial" model="@ViewBag.AllRecipes" />
+</aside>

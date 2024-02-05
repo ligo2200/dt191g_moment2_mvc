@@ -3,19 +3,47 @@
 @{
     ViewData["Title"] = "Hem";
 }
+<div class="left">
+    <h2>Välkommen till receptbanken</h2>
+    <h3 class="rub3">De tre senast inlagda recepten:</h3>
 
-<h2>Välkommen till receptbanken</h2>
+    <ul class="rec">
+        <!-- show recipe-details -->
+        @foreach (var recipe in Model)
+        {
+            <li class="li-rec">
+                <h3 class="title-rec">@recipe.Title</h3>
 
-<ul>
-    <!-- show recipe-details -->
-    @foreach (var recipe in Model)
-    {
-        <li>
-            <h4>@recipe.Title</h4>
-            <p>@recipe.Ingredients</p>
-            <p>@recipe.Instructions</p>
-        </li>
-    }
-</ul>
+                <div class="p-cont">
+                    <h4>Kategori:</h4>
+                    <p>@recipe.Category</p>
+                </div>
 
-@await Html.PartialAsync("_LatestRecipesPartial", Model)
+                <div class="p-cont">
+                    <h4>Svårighetsgrad:</h4>
+                    <p>@recipe.Difficulty</p>
+                </div>
+
+                <div class="p-cont">
+                    <h4>Vegetarisk:</h4>
+                    <p>@recipe.IsVegetarian</p>
+                </div>
+
+                <div class="p-cont">
+                    <h4>Ingredienser:</h4>
+                    <p>@recipe.Ingredients</p>
+                </div>
+
+                <div class="p-cont">
+                    <h4>Instruktioner:</h4>
+                    <p>@recipe.Instructions</p>
+                </div>
+
+            </li>
+        }
+    </ul>
+</div>
+
+<aside>
+    @await Html.PartialAsync("_LatestRecipesPartial", Model)
+</aside>
