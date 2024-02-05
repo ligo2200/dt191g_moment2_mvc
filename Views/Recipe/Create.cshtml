@@ -1,31 +1,34 @@
-﻿@{
+﻿@model moment2_mvc.Models.RecipeModel;
+@{
     ViewData["Title"] = "Skapa recept";
 }
 
-@model moment2_mvc.Models.RecipeModel
+
 
 <h2>Lägg till nytt recept</h2>
 
-@using (Html.BeginForm("Create", "Recipe", FormMethod.Post))
-{
-    <div>
-        <label asp-for="Title">Titel:</label>
-        <input asp-for="Title" />
-        <span asp-validation-for="Title" class="text-danger"></span>
-    </div>
+<h3>@ViewBag.Message</h3>
 
-    <div>
-        <label asp-for="Ingredients">Ingredienser:</label>
-        <textarea asp-for="Ingredients"></textarea>
-        <span asp-validation-for="Ingredients" class="text-danger"></span>
-    </div>
+<form method="post">
 
-    <div>
-        <label asp-for="Instructions">Instruktioner:</label>
-        <textarea asp-for="Instructions"></textarea>
-        <span asp-validation-for="Instructions" class="text-danger"></span>
-    </div>
+    <div asp-validation-summary="ModelOnly"></div>
+    <label asp-for="Title"></label>
+    <input asp-for="Title" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br />
+    <label asp-for="Ingredients"></label>
+    <textarea asp-for="Ingredients"></textarea>
+    <span asp-validation-for="Ingredients" class="text-danger"></span>
+    <br />
+
+   
+    <label asp-for="Instructions"></label>
+    <textarea asp-for="Instructions"></textarea>
+    <span asp-validation-for="Instructions" class="text-danger"></span>
+    <br />
 
     <button type="submit">Lägg till recept</button>
-}
+
+</form>
+
 

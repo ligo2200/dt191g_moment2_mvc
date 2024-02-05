@@ -1,8 +1,9 @@
-﻿@{
-    ViewData["Title"] = "All recipes";
+﻿@model List<moment2_mvc.Models.RecipeModel>
+
+@{
+    ViewData["Title"] = "Alla recept";
 }
 
-@model List<RecipeModel>
 
 <h2>Alla recept</h2>
 
@@ -14,3 +15,5 @@
         </li>
     }
 </ul>
+
+<partial name="_LatestRecipesPartial" model="@Model" />

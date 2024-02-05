@@ -14,7 +14,7 @@ namespace moment2_mvc.Controllers
 {
     public class RecipeController : Controller
     {
-        private string _jsonFilePath;
+        private readonly string _jsonFilePath;
 
         public RecipeController()
         {
@@ -26,29 +26,36 @@ namespace moment2_mvc.Controllers
         [Route("/skaparecept")]
         public IActionResult Create()
         {
+            
+            ViewBag.Message = "Använd formuläret för att skriva in ditt recept.";
+
             return View();
         }
 
+        [Route("/skaparecept")]
         [HttpPost]
-        public IActionResult Create(RecipeModel recipeModel)
+        public IActionResult Create(RecipeModel recipe)
         {
-            Console.WriteLine(recipeModel);
+            Console.WriteLine(recipe);
             try
             {
                 // if form is valid, add new recipe.
                 if (ModelState.IsValid)
                 {
                     var recipes = LoadRecipes();
-                    recipeModel.RecipeId = recipes.Count + 1;
-                    recipes.Add(recipeModel);
+                    recipe.RecipeId = recipes.Count + 1;
+                    recipes.Add(recipe);
                     SaveRecipes(recipes);
 
+                    ModelState.Clear();
+
+                    // redirect to index-page
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
                     // If not valid, show form with errormessages.
-                    return View(recipeModel);
+                    return View(recipe);
                 }
             }
             catch (Exception ex) 
@@ -97,7 +104,6 @@ namespace moment2_mvc.Controllers
                     return new List<RecipeModel>();
                 }
 
-                // read json file
                 var json = System.IO.File.ReadAllText(_jsonFilePath);
                 // return deserialized JSON recipelist 
                 return JsonSerializer.Deserialize<List<RecipeModel>>(json);

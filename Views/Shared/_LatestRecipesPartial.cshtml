@@ -1,0 +1,12 @@
+﻿@model List<moment2_mvc.Models.RecipeModel>
+
+<h3>Senaste recepten</h3>
+
+<ul>
+    @foreach (var recipe in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Recipe", new { recipeId = recipe.RecipeId })">@recipe.Title</a>
+        </li>
+    }
+</ul>

@@ -1,8 +1,21 @@
-﻿@{
+﻿@model List<moment2_mvc.Models.RecipeModel>
+
+@{
     ViewData["Title"] = "Hem";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Startsida</h1>
-    
-</div>
+<h2>Välkommen till receptbanken</h2>
+
+<ul>
+    <!-- show recipe-details -->
+    @foreach (var recipe in Model)
+    {
+        <li>
+            <h4>@recipe.Title</h4>
+            <p>@recipe.Ingredients</p>
+            <p>@recipe.Instructions</p>
+        </li>
+    }
+</ul>
+
+@await Html.PartialAsync("_LatestRecipesPartial", Model)
