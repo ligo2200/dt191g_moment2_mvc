@@ -20,7 +20,7 @@ namespace moment2_mvc.Controllers
         {
             _jsonFilePath = Path.Combine("wwwroot", "Data", "recipes.json");
             // filepath for json-file
-            //_jsonFilePath = @"recipes.json";
+           
         }
 
         [Route("/skaparecept")]

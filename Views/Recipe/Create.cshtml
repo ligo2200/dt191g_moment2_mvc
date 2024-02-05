@@ -14,7 +14,7 @@
         <div asp-validation-summary="ModelOnly"></div>
         <label asp-for="Title"></label>
         <input asp-for="Title" />
-        <span asp-validation-for="Title" class="text-danger"></span>
+        <span asp-validation-for="Title"></span>
         <br />
 
         <label asp-for="Category">Kategori:</label>
@@ -32,13 +32,13 @@
 
         <label asp-for="Ingredients"></label>
         <textarea asp-for="Ingredients"></textarea>
-        <span asp-validation-for="Ingredients" class="text-danger"></span>
+        <span asp-validation-for="Ingredients"></span>
         <br />
 
    
         <label asp-for="Instructions"></label>
         <textarea asp-for="Instructions"></textarea>
-        <span asp-validation-for="Instructions" class="text-danger"></span>
+        <span asp-validation-for="Instructions"></span>
         <br />
 
         <button type="submit">Lägg till recept</button>

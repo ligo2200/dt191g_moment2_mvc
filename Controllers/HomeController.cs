@@ -26,7 +26,8 @@ namespace moment2_mvc.Controllers
         {
             string jsonStr = System.IO.File.ReadAllText(_jsonFilePath);
 
-            var recipes = JsonSerializer.Deserialize<List<RecipeModel>>(jsonStr);
+            var recipes = JsonSerializer.Deserialize<List<RecipeModel>>(jsonStr).OrderByDescending(r => r.RecipeId).Take(3).ToList();
+
             return View(recipes);
         }
 

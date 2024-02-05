@@ -16,5 +16,23 @@
     "IsVegetarian": "true",
     "Ingredients": "Till deg: \u00C4gg, mj\u00F6l, socker, sm\u00F6r. Till fyllning: marsanpulver, mj\u00F6lk",
     "Instructions": "Blanda ihop alla ingredienserna till degen och platta ut den i en form. Blanda marsanpulver och mj\u00F6lk, l\u00E5t st\u00E5 i kyl en stund tills tjocknat. H\u00E4v i fyllningen. In i ugn p\u00E5 cirka 200 grader i 20 minuter."
+  },
+  {
+    "RecipeId": 3,
+    "Title": "Testar",
+    "Category": "F\u00F6rr\u00E4tt",
+    "Difficulty": "L\u00E4tt",
+    "IsVegetarian": "false",
+    "Ingredients": "Testar",
+    "Instructions": "Testar"
+  },
+  {
+    "RecipeId": 4,
+    "Title": "Testing",
+    "Category": "F\u00F6rr\u00E4tt",
+    "Difficulty": "L\u00E4tt",
+    "IsVegetarian": "false",
+    "Ingredients": "Testar",
+    "Instructions": "Testing"
   }
 ]
